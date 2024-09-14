@@ -5,7 +5,7 @@ just a small programmer.
 
 ## Main Contents
 ### Other contents
-[Snake Game](https://deb-svg.github.io/snakegame)
+[Snake Game](https://deb-svg.github.io/snakegame) <br>
 [Tutorials and Guides](https://deb-svg.github.io/tutorandguides)
 
 ### About Me
