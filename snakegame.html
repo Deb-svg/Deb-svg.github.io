@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        canvas {
+            border: 1px solid #000;
+            background-color: #fff;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        button:active {
+            background-color: #388e3c;
+        }
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .controls button {
+            width: 80px;
+            height: 80px;
+            font-size: 20px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <button id="startButton">Start/Restart Game</button>
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+    <div class="controls">
+        <button id="upButton">Up</button>
+        <div>
+            <button id="leftButton">Left</button>
+            <button id="rightButton">Right</button>
+        </div>
+        <button id="downButton">Down</button>
+    </div>
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const scale = 20;
+        const rows = canvas.height / scale;
+        const columns = canvas.width / scale;
+        let snake;
+        let fruit;
+        let gameInterval;
+
+        function setup() {
+            snake = new Snake();
+            fruit = new Fruit();
+            fruit.randomizePosition();
+            document.addEventListener('keydown', e => {
+                const direction = e.key.replace('Arrow', '');
+                snake.setDirection(direction);
+            });
+        }
+
+        function gameLoop() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            snake.update();
+            snake.show();
+            fruit.show();
+            if (snake.eat(fruit)) {
+                fruit.randomizePosition();
+            }
+            if (snake.isDead()) {
+                alert('Game Over');
+                clearInterval(gameInterval);
+            }
+        }
+
+        document.getElementById('startButton').addEventListener('click', () => {
+            if (gameInterval) {
+                clearInterval(gameInterval);
+            }
+            setup();
+            gameInterval = setInterval(gameLoop, 100);
+        });
+
+        document.getElementById('upButton').addEventListener('click', () => {
+            snake.setDirection('up');
+        });
+        document.getElementById('downButton').addEventListener('click', () => {
+            snake.setDirection('down');
+        });
+        document.getElementById('leftButton').addEventListener('click', () => {
+            snake.setDirection('left');
+        });
+        document.getElementById('rightButton').addEventListener('click', () => {
+            snake.setDirection('right');
+        });
+
+        class Snake {
+            constructor() {
+                this.body = [{ x: Math.floor(columns / 2), y: Math.floor(rows / 2) }];
+                this.direction = 'right';
+                this.grow = false;
+            }
+
+            setDirection(dir) {
+                if (dir === 'up' && this.direction !== 'down') this.direction = 'up';
+                if (dir === 'down' && this.direction !== 'up') this.direction = 'down';
+                if (dir === 'left' && this.direction !== 'right') this.direction = 'left';
+                if (dir === 'right' && this.direction !== 'left') this.direction = 'right';
+            }
+
+            update() {
+                const head = { ...this.body[0] };
+                if (this.direction === 'up') head.y -= 1;
+                if (this.direction === 'down') head.y += 1;
+                if (this.direction === 'left') head.x -= 1;
+                if (this.direction === 'right') head.x += 1;
+
+                this.body.unshift(head);
+                if (!this.grow) this.body.pop();
+                else this.grow = false;
+            }
+
+            show() {
+                ctx.fillStyle = 'green';
+                this.body.forEach(segment => {
+                    ctx.fillRect(segment.x * scale, segment.y * scale, scale, scale);
+                });
+            }
+
+            eat(fruit) {
+                const head = this.body[0];
+                if (head.x === fruit.position.x && head.y === fruit.position.y) {
+                    this.grow = true;
+                    return true;
+                }
+                return false;
+            }
+
+            isDead() {
+                const head = this.body[0];
+                if (head.x < 0 || head.x >= columns || head.y < 0 || head.y >= rows) return true;
+                for (let i = 1; i < this.body.length; i++) {
+                    if (this.body[i].x === head.x && this.body[i].y === head.y) return true;
+                }
+                return false;
+            }
+        }
+
+        class Fruit {
+            constructor() {
+                this.position = { x: 0, y: 0 };
+                this.randomizePosition();
+            }
+
+            randomizePosition() {
+                this.position = {
+                    x: Math.floor(Math.random() * columns),
+                    y: Math.floor(Math.random() * rows)
+                };
+            }
+
+            show() {
+                ctx.fillStyle = 'red';
+                ctx.fillRect(this.position.x * scale, this.position.y * scale, scale, scale);
+            }
+        }
+    </script>
+</body>
+</html>
