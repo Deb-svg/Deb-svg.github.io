@@ -171,9 +171,6 @@ Best practices for managing your projects effectively. This guide covers:
 - **Comments**: Share your feedback or ask questions about the tutorials in the comments section below each guide.
 - **Updates**: Keep an eye on this section for updates to existing tutorials and new guides.
 
-## Search
-Use the search bar below to find specific guides or topics.
-
 ---
 
 Feel free to explore and learn from these tutorials and guides. If you have any suggestions or requests for new content, please reach out!
