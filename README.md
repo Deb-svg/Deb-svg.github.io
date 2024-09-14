@@ -4,7 +4,7 @@ Hello! Welcome to my github.io README,
 just a small programmer.
 
 ## Main Contents
-### Games
+### Other contents
 Only have [Snake Game](https://deb-svg.github.io/snakegame) right now! Will add more soon.
 
 ### About Me
