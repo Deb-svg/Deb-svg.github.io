@@ -2,15 +2,22 @@
 
 Hello welcome to my github.io Readme
 
------About me----- \n
-My fav programming language: Python, Java and C \n
-Age: Still young, guess yourself \n
-Name: Unknown, guess yourself \n
-Hobby: Programming sometimes do random things \n
+## Main Contents
+### About Me
+My fav programming language: Python, Java and C
 
------When i get a new phone i want to...----- \n
-Root it with Magisk or KSU \n
-Gaming \n
-Liveboot with root \n
-| \n
-|_> For pranking my friends
+Age: Still young, guess yourself
+
+Name: Unknown, guess yourself, start from the letter A and also i am from Malaysia
+
+Hobby: Programming sometimes do random things
+
+
+### When I Get A New Phone I Want To...
+Root it with Magisk or KSU
+
+Gaming
+
+Liveboot with root <br>
+├── Feels like hacking <br>
+└── For pranking my friends
