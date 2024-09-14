@@ -5,7 +5,8 @@ just a small programmer.
 
 ## Main Contents
 ### Other contents
-Only have [Snake Game](https://deb-svg.github.io/snakegame) right now! Will add more soon.
+[Snake Game](https://deb-svg.github.io/snakegame)
+[Tutorials and Guides](https://deb-svg.github.io/tutorandguides)
 
 ### About Me
 My fav programming language: Python, Java and C
