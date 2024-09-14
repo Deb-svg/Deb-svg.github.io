@@ -1,17 +1,20 @@
 # My Github io
 
-Hello welcome to my github.io Readme
+Hello! Welcome to my github.io README,
+just a small programmer.
 
 ## Main Contents
 ### About Me
 My fav programming language: Python, Java and C
 
-Age: Still young, guess yourself
+Age: Between 8, 12
 
-Name: Unknown, guess yourself, start from the letter A and also i am from Malaysia
+Name: Ammar Shaif
 
-Hobby: Programming sometimes do random things
+Hobby: Programming, sometimes do random things
 
+Fav Color: Blue <br>
+Fav Num: 7 <br> <br>
 
 ### When I Get A New Phone I Want To...
 Root it with Magisk or KSU
