@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn C: Advanced</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        nav {
+            margin: 1rem;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 1rem;
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        main {
+            padding: 2rem;
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            border-radius: 5px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        h2 {
+            margin-top: 1.5rem;
+        }
+        code {
+            background: #eee;
+            border-radius: 3px;
+            padding: 0.2rem;
+        }
+        pre {
+            background: #eee;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        ul {
+            list-style-type: square;
+            margin-left: 2rem;
+        }
+        ol {
+            margin-left: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Learn C: Advanced</h1>
+    </header>
+    <nav>
+        <a href="learn-c-introduction.html">Introduction</a>
+        <a href="learn-c-basics.html">Basics</a>
+        <a href="learn-c-advanced.html">Advanced</a>
+        <a href="learn-c-resources.html">Resources</a>
+    </nav>
+    <main>
+        <h2>Pointers</h2>
+        <p>Pointers are variables that store the memory address of another variable. They are powerful tools in C for managing memory and improving performance.</p>
+        
+        <h3>Declaring and Using Pointers</h3>
+        <pre><code>int x = 10;
+int *p = &x; // p is a pointer to int and stores the address of x
+printf("Value of x: %d\n", *p); // Dereferencing the pointer to get the value of x
+printf("Address of x: %p\n", p); // Printing the address stored in p</code></pre>
+        <p>The <code>*</code> operator is used to declare a pointer and to dereference it, while the <code>&</code> operator is used to get the address of a variable.</p>
+
+        <h3>Pointer Arithmetic</h3>
+        <p>Pointer arithmetic involves operations on pointers, such as incrementing or decrementing them. This is useful when working with arrays.</p>
+        <pre><code>int arr[] = {1, 2, 3, 4, 5};
+int *p = arr; // Pointing to the first element of the array
+for (int i = 0; i &lt; 5; i++) {
+    printf("%d\n", *(p + i)); // Accessing array elements using pointer arithmetic
+}</code></pre>
+
+        <h2>Dynamic Memory Allocation</h2>
+        <p>C allows dynamic memory allocation using functions from the <code>stdlib.h</code> library. This is useful for creating data structures that can grow or shrink as needed.</p>
+
+        <h3>Functions for Memory Management</h3>
+        <ul>
+            <li><code>malloc(size_t size)</code> - Allocates a block of memory of specified size.</li>
+            <li><code>calloc(size_t num, size_t size)</code> - Allocates memory for an array and initializes it to zero.</li>
+            <li><code>realloc(void *ptr, size_t size)</code> - Resizes a previously allocated memory block.</li>
+            <li><code>free(void *ptr)</code> - Deallocates a previously allocated block of memory.</li>
+        </ul>
+        <p>Example of using dynamic memory allocation:</p>
+        <pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main() {
+    int *arr = (int *)malloc(5 * sizeof(int)); // Allocating memory for 5 integers
+    if (arr == NULL) {
+        printf("Memory allocation failed\n");
+        return 1;
+    }
+    for (int i = 0; i &lt; 5; i++) {
+        arr[i] = i * 2;
+    }
+    for (int i = 0; i &lt; 5; i++) {
+        printf("%d\n", arr[i]);
+    }
+    free(arr); // Deallocating the memory
+    return 0;
+}</code></pre>
+
+        <h2>Structures</h2>
+        <p>Structures are user-defined data types that group related variables of different types into a single entity.</p>
+
+        <h3>Defining and Using Structures</h3>
+        <pre><code>#include &lt;stdio.h&gt;
+
+struct Person {
+    char name[50];
+    int age;
+};
+
+int main() {
+    struct Person person1;
+    strcpy(person1.name, "Alice");
+    person1.age = 30;
+
+    printf("Name: %s\n", person1.name);
+    printf("Age: %d\n", person1.age);
+
+    return 0;
+}</code></pre>
+        <p>Structures are defined using the <code>struct</code> keyword and can be used to create variables of that type. You can access structure members using the dot operator.</p>
+
+        <h2>File Handling</h2>
+        <p>C provides functions for handling files, allowing you to read from and write to files.</p>
+
+        <h3>File Operations</h3>
+        <ul>
+            <li><code>fopen(const char *filename, const char *mode)</code> - Opens a file and returns a file pointer.</li>
+            <li><code>fclose(FILE *stream)</code> - Closes an opened file.</li>
+            <li><code>fread(void *ptr, size_t size, size_t count, FILE *stream)</code> - Reads data from a file.</li>
+            <li><code>fwrite(const void *ptr, size_t size, size_t count, FILE *stream)</code> - Writes data to a file.</li>
+            <li><code>fprintf(FILE *stream, const char *format, ...)</code> - Prints formatted data to a file.</li>
+            <li><code>fscanf(FILE *stream, const char *format, ...)</code> - Reads formatted data from a file.</li>
+        </ul>
+        <p>Example of file operations:</p>
+        <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    FILE *file = fopen("example.txt", "w");
+    if (file == NULL) {
+        printf("Error opening file\n");
+        return 1;
+    }
+    fprintf(file, "Hello, File!\n");
+    fclose(file);
+
+    file = fopen("example.txt", "r");
+    if (file == NULL) {
+        printf("Error opening file\n");
+        return 1;
+    }
+    char buffer[100];
+    fscanf(file, "%s", buffer);
+    printf("Read from file: %s\n", buffer);
+    fclose(file);
+
+    return 0;
+}</code></pre>
+
+        <h2>Advanced Data Structures</h2>
+        <p>Advanced data structures allow for efficient data management and manipulation. Some commonly used data structures include:</p>
+        <ul>
+            <li><strong>Linked Lists:</strong> A linked list is a collection of nodes where each node contains data and a pointer to the next node.</li>
+            <li><strong>Stacks:</strong> A stack is a collection of elements with Last-In-First-Out (LIFO) access.</li>
+            <li><strong>Queues:</strong> A queue is a collection of elements with First-In-First-Out (FIFO) access.</li>
+            <li><strong>Trees:</strong> Trees are hierarchical data structures with a root node and child nodes.</li>
+        </ul>
+        <p>These data structures are often implemented using pointers and dynamic memory allocation, and they are fundamental to many algorithms and systems.</p>
+
+        <h2>Conclusion</h2>
+        <p>Advanced C programming involves understanding and utilizing pointers, dynamic memory allocation, structures, file handling, and advanced data structures. Mastery of these concepts is crucial for writing efficient and effective C programs and for tackling complex programming challenges.</p>
+        <p>In the next section, we will provide a list of resources to further your learning and deepen your understanding of C programming.</p>
+    </main>
+</body>
+</html>
+l
