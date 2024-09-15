@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Basics</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        pre, code {
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: square;
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Code block styling */
+        code {
+            background-color: #f0f0f0;
+            color: #c0392b;
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+
+        pre code {
+            color: #2c3e50;
+        }
+
+        /* Container for main content */
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .content h2 {
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Buttons for navigation */
+        .navigation {
+            margin-top: 20px;
+        }
+
+        .navigation a {
+            display: inline-block;
+            margin-right: 10px;
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .navigation a:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+<div class="content">
+    <h1>Java Basics</h1>
+    <p>Welcome to the first part of the Learn Java series! In this section, we’ll introduce you to the basics of Java programming, covering core concepts like variables, data types, control structures, and more.</p>
+
+    <h2>Setting Up Your Java Environment</h2>
+    <p>Before we begin coding, make sure you have Java Development Kit (JDK) installed. You can download it from the <a href="https://www.oracle.com/java/technologies/javase-downloads.html" target="_blank">official Oracle website</a>. Once installed, ensure your environment variables are set up properly so that the <code>javac</code> and <code>java</code> commands can be accessed from the command line.</p>
+
+    <h2>Variables and Data Types</h2>
+    <p>In Java, variables are used to store data that can be manipulated by the program. Each variable has a specific data type that defines what kind of data it can store. Here’s an example of declaring and initializing variables:</p>
+
+    <pre><code>int age = 25;
+double salary = 55000.50;
+String name = "John Doe";</code></pre>
+
+    <p>In the example above:</p>
+    <ul>
+        <li><code>int</code> is an integer data type for whole numbers.</li>
+        <li><code>double</code> is used for floating-point numbers (numbers with decimals).</li>
+        <li><code>String</code> is used for sequences of characters (text).</li>
+    </ul>
+
+    <h2>Control Structures</h2>
+    <p>Java supports control structures like if-else statements, loops, and switch cases, allowing you to control the flow of your program. Below is an example of an if-else statement:</p>
+
+    <pre><code>int age = 18;
+if (age >= 18) {
+    System.out.println("You are an adult.");
+} else {
+    System.out.println("You are a minor.");
+}</code></pre>
+
+    <h2>Writing and Running Your First Program</h2>
+    <p>Let’s put everything together and write your first full Java program. Create a file named <code>BasicExample.java</code> and add the following code:</p>
+
+    <pre><code>public class BasicExample {
+    public static void main(String[] args) {
+        String name = "Alice";
+        int age = 30;
+        System.out.println("Hello, " + name + "!");
+        System.out.println("You are " + age + " years old.");
+    }
+}</code></pre>
+
+    <p>To run the program, follow these steps:</p>
+    <ul>
+        <li>Open your terminal and navigate to the folder where <code>BasicExample.java</code> is saved.</li>
+        <li>Compile the program:
+            <pre><code>javac BasicExample.java</code></pre>
+        </li>
+        <li>Run the program:
+            <pre><code>java BasicExample</code></pre>
+        </li>
+        <li>You should see the following output:
+            <pre><code>Hello, Alice!
+You are 30 years old.</code></pre>
+        </li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>Congratulations! You’ve written and executed your first Java program. In the next section, we will dive deeper into Object-Oriented Programming (OOP) concepts, which are the foundation of Java’s design.</p>
+
+    <div class="navigation">
+        <a href="learn-jv-oop.html">Next: Object-Oriented Programming</a>
+        <a href="learn-jv-intro.html">Back to Home</a>
+    </div>
+</div>
+
+</body>
+</html>
