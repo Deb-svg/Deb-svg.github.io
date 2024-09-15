@@ -5,14 +5,14 @@ just a small programmer.
 
 ## Main Contents
 ### Other contents
-[Snake Game](https://deb-svg.github.io/snakegame) <br>
-[Tutorials and Guides](https://deb-svg.github.io/tutorandguides)
+[Snake Game](https://deb-svg.github.io/snakegame.html) <br>
+[Tutorials and Guides](https://deb-svg.github.io/tutorandguides.html)
 
 **Learn-C** <br>
-├──[Introduction](https://deb-svg.github.io/learn-c-introduction) <br>
-├──[C Basics](https://deb-svg.github.io/learn-c-basics) <br>
-├──[C Advanced](https://deb-svg.github.io/learn-c-advanced) <br>
-└──[Resources for C](https://deb-svg.github.io/learn-c-resources)
+├──[Introduction](https://deb-svg.github.io/learn-c-introduction.html) <br>
+├──[C Basics](https://deb-svg.github.io/learn-c-basics.html) <br>
+├──[C Advanced](https://deb-svg.github.io/learn-c-advanced.html) <br>
+└──[Resources for C](https://deb-svg.github.io/learn-c-resources.html)
 
 [Learn-Java](https://deb-svg.github.io/learn-jv-intro.html)
 
