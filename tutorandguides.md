@@ -1,3 +1,8 @@
+---
+theme: jekyll-theme-minimal
+title: Deb-svg's Tutorial and Guides
+description: Learn something here!
+---
 # Tutorials and Guides
 
 Welcome to the Tutorials and Guides section! Here, you will find a variety of resources designed to help you learn and master different programming languages, tools, and best practices. Browse through our categorized content to find the guides that best suit your needs.
