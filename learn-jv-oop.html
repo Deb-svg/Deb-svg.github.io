@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object-Oriented Programming in Java</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        pre, code {
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: square;
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Code block styling */
+        code {
+            background-color: #f0f0f0;
+            color: #c0392b;
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+
+        pre code {
+            color: #2c3e50;
+        }
+
+        /* Container for main content */
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .content h2 {
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Buttons for navigation */
+        .navigation {
+            margin-top: 20px;
+        }
+
+        .navigation a {
+            display: inline-block;
+            margin-right: 10px;
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .navigation a:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+<div class="content">
+    <h1>Object-Oriented Programming in Java</h1>
+    <p>Welcome to the second part of the <strong>Learn Java</strong> series! In this section, we will dive into one of Java's core concepts: <strong>Object-Oriented Programming (OOP)</strong>. OOP allows us to create programs that are more modular, reusable, and easier to maintain. Java is a fully object-oriented language, which makes OOP essential to mastering the language.</p>
+
+    <h2>What is Object-Oriented Programming?</h2>
+    <p>OOP is a programming paradigm based on the concept of "objects," which can contain data and code that manipulates the data. The four core principles of OOP are:</p>
+    <ul>
+        <li><strong>Encapsulation</strong> - Wrapping data (fields) and code (methods) together into a single unit, or class. Access to the data is restricted through well-defined interfaces (getters/setters).</li>
+        <li><strong>Inheritance</strong> - A class can inherit fields and methods from another class, allowing for code reuse and the creation of hierarchical relationships.</li>
+        <li><strong>Polymorphism</strong> - The ability of different objects to respond to the same method call in different ways, typically achieved through method overriding or interfaces.</li>
+        <li><strong>Abstraction</strong> - Hiding the complex implementation details of an object and exposing only the necessary functionalities to the outside world.</li>
+    </ul>
+
+    <h2>Classes and Objects</h2>
+    <p>In Java, a class is a blueprint for creating objects (instances). Each object has fields (attributes) and methods (behavior). Let’s look at an example:</p>
+
+    <pre><code>public class Car {
+    // Fields (attributes)
+    String model;
+    String color;
+    int year;
+
+    // Constructor
+    public Car(String model, String color, int year) {
+        this.model = model;
+        this.color = color;
+        this.year = year;
+    }
+
+    // Method (behavior)
+    public void start() {
+        System.out.println(model + " is starting.");
+    }
+}
+</code></pre>
+
+    <p>In this example:</p>
+    <ul>
+        <li><code>Car</code> is a class with three fields: <code>model</code>, <code>color</code>, and <code>year</code>.</li>
+        <li>The constructor <code>Car(String, String, int)</code> initializes the object’s fields when an object is created.</li>
+        <li>The <code>start</code> method defines the behavior of the car, which prints a message when the car starts.</li>
+    </ul>
+
+    <h3>Creating an Object</h3>
+    <p>To create an object from the <code>Car</code> class, you would do the following:</p>
+
+    <pre><code>public class Main {
+    public static void main(String[] args) {
+        // Creating an object of the Car class
+        Car myCar = new Car("Tesla", "Red", 2023);
+        myCar.start();  // Output: Tesla is starting.
+    }
+}
+</code></pre>
+
+    <p>This code creates an instance of the <code>Car</code> class named <code>myCar</code> and calls its <code>start</code> method.</p>
+
+    <h2>Inheritance</h2>
+    <p>Inheritance allows one class (subclass) to inherit fields and methods from another class (superclass). Let’s modify our example:</p>
+
+    <pre><code>public class ElectricCar extends Car {
+    int batteryLife;
+
+    public ElectricCar(String model, String color, int year, int batteryLife) {
+        super(model, color, year);
+        this.batteryLife = batteryLife;
+    }
+
+    public void charge() {
+        System.out.println(model + " is charging. Battery life: " + batteryLife + " hours.");
+    }
+}
+</code></pre>
+
+    <p>In this example:</p>
+    <ul>
+        <li><code>ElectricCar</code> is a subclass of <code>Car</code>, meaning it inherits the fields and methods of <code>Car</code>.</li>
+        <li>The <code>super()</code> call in the constructor passes values to the <code>Car</code> class constructor.</li>
+        <li><code>ElectricCar</code> adds a new field <code>batteryLife</code> and a new method <code>charge()</code> in addition to the inherited ones.</li>
+    </ul>
+
+    <h2>Polymorphism</h2>
+    <p>Polymorphism allows us to use a subclass object wherever a superclass object is expected. For example:</p>
+
+    <pre><code>public class Main {
+    public static void main(String[] args) {
+        Car myCar = new ElectricCar("Tesla", "Red", 2023, 12);
+        myCar.start();  // Output: Tesla is starting.
+        
+        // myCar.charge();  // This would cause a compilation error because myCar is of type Car, not ElectricCar
+    }
+}
+</code></pre>
+
+    <p>Here, <code>myCar</code> is a reference of type <code>Car</code>, but it points to an <code>ElectricCar</code> object. The method <code>start()</code> is called based on the object type (ElectricCar), but <code>charge()</code> cannot be called directly since it belongs to the subclass.</p>
+
+    <h2>Encapsulation</h2>
+    <p>Encapsulation is the practice of keeping fields private and providing public methods to access and modify them. This protects the internal state of an object from unintended modification. For example:</p>
+
+    <pre><code>public class Car {
+    private String model;
+    private String color;
+    private int year;
+
+    public Car(String model, String color, int year) {
+        this.model = model;
+        this.color = color;
+        this.year = year;
+    }
+
+    // Getter and Setter methods
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+}
+</code></pre>
+
+    <p>Here, the fields <code>model</code>, <code>color</code>, and <code>year</code> are private, meaning they can only be accessed through public getter and setter methods.</p>
+
+    <h2>Abstraction</h2>
+        <p>Abstraction is used to hide the internal implementation details of an object and only expose what is necessary. In Java, abstraction can be achieved using abstract classes and interfaces.</p>
+
+    <h3>Abstract Classes</h3>
+    <p>An abstract class is a class that cannot be instantiated on its own and is meant to be subclassed. It can have abstract methods (without implementation) that must be implemented by subclasses. Here’s an example:</p>
+
+    <pre><code>abstract class Animal {
+    abstract void makeSound();
+
+    public void eat() {
+        System.out.println("This animal eats food.");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Woof! Woof!");
+    }
+}
+</code></pre>
+
+    <p>In this example:</p>
+    <ul>
+        <li><code>Animal</code> is an abstract class with an abstract method <code>makeSound()</code> and a concrete method <code>eat()</code>.</li>
+        <li><code>Dog</code> is a subclass of <code>Animal</code> and provides an implementation for the <code>makeSound()</code> method.</li>
+    </ul>
+
+    <h3>Interfaces</h3>
+    <p>Interfaces in Java are abstract types that can contain method signatures but no implementation. A class can implement multiple interfaces, providing implementations for all of their methods. Here’s an example:</p>
+
+    <pre><code>interface Drivable {
+    void drive();
+}
+
+class Car implements Drivable {
+    @Override
+    public void drive() {
+        System.out.println("The car is driving.");
+    }
+}
+</code></pre>
+
+    <p>In this example:</p>
+    <ul>
+        <li><code>Drivable</code> is an interface with a single method <code>drive()</code>.</li>
+        <li><code>Car</code> implements the <code>Drivable</code> interface and provides an implementation for the <code>drive()</code> method.</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>Object-Oriented Programming (OOP) is a powerful paradigm that helps you build robust and maintainable software. By understanding the principles of OOP, you can create classes and objects that model real-world entities and interactions more effectively. In this lesson, we covered the core principles of OOP, including encapsulation, inheritance, polymorphism, and abstraction, along with examples to illustrate these concepts.</p>
+
+    <div class="navigation">
+        <a href="learn-jv-advanced.html">Next: Advanced Java Concepts</a>
+        <a href="learn-jv-basics.html">Back to Basics</a>
+        <a href="learn-jv-intro.html">Back to Home</a>
+    </div>
+</div>
+
+</body>
+</html>
