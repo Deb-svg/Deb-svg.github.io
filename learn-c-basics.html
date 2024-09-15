@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn C: Basics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        nav {
+            margin: 1rem;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 1rem;
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        main {
+            padding: 2rem;
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            border-radius: 5px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        h2 {
+            margin-top: 1.5rem;
+        }
+        code {
+            background: #eee;
+            border-radius: 3px;
+            padding: 0.2rem;
+        }
+        pre {
+            background: #eee;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        ul {
+            list-style-type: square;
+            margin-left: 2rem;
+        }
+        ol {
+            margin-left: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Learn C: Basics</h1>
+    </header>
+    <nav>
+        <a href="learn-c-introduction.html">Introduction</a>
+        <a href="learn-c-basics.html">Basics</a>
+        <a href="learn-c-advanced.html">Advanced</a>
+        <a href="learn-c-resources.html">Resources</a>
+    </nav>
+    <main>
+        <h2>Basic Syntax and Structure</h2>
+        <p>C programs are structured into functions, with the <code>main</code> function serving as the entry point. Each C program must have a <code>main</code> function.</p>
+
+        <h3>Structure of a C Program</h3>
+        <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    // Your code here
+    return 0;
+}</code></pre>
+        <p>This simple template includes:</p>
+        <ul>
+            <li><code>#include &lt;stdio.h&gt;</code> - This preprocessor directive includes the standard input-output header file, which is necessary for functions like <code>printf</code>.</li>
+            <li><code>int main()</code> - The main function where program execution begins.</li>
+            <li><code>return 0;</code> - This statement indicates that the program ended successfully.</li>
+        </ul>
+
+        <h2>Variables and Data Types</h2>
+        <p>In C, variables are used to store data. You must declare a variable before using it, specifying its data type.</p>
+
+        <h3>Common Data Types</h3>
+        <ul>
+            <li><code>int</code> - For integer values.</li>
+            <li><code>float</code> - For floating-point numbers (decimals).</li>
+            <li><code>double</code> - For double-precision floating-point numbers.</li>
+            <li><code>char</code> - For single characters.</li>
+        </ul>
+        <p>Example of variable declaration:</p>
+        <pre><code>int age;
+float salary;
+char grade;</code></pre>
+
+        <h2>Operators</h2>
+        <p>C provides several operators to perform arithmetic, comparison, and logical operations:</p>
+        <ul>
+            <li><strong>Arithmetic Operators:</strong> +, -, *, /, %</li>
+            <li><strong>Comparison Operators:</strong> ==, !=, &gt;, &lt;, &gt;=, &lt;=</li>
+            <li><strong>Logical Operators:</strong> && (logical AND), || (logical OR), ! (logical NOT)</li>
+        </ul>
+        <p>Example of using operators:</p>
+        <pre><code>int a = 10;
+int b = 20;
+int sum = a + b; // Arithmetic operator
+if (a &gt; b) {
+    printf("a is greater than b");
+} else {
+    printf("a is not greater than b");
+}</code></pre>
+
+        <h2>Control Flow Statements</h2>
+        <p>C provides several control flow statements to make decisions and repeat tasks:</p>
+        <ul>
+            <li><strong>if</strong> - Executes a block of code if a condition is true.</li>
+            <li><strong>else</strong> - Executes a block of code if the condition in the <code>if</code> statement is false.</li>
+            <li><strong>for</strong> - Loops through a block of code a specified number of times.</li>
+            <li><strong>while</strong> - Loops through a block of code while a condition is true.</li>
+            <li><strong>do-while</strong> - Loops through a block of code at least once and then repeats as long as a condition is true.</li>
+        </ul>
+        
+        <h3>Example of Control Flow</h3>
+        <pre><code>// if-else statement
+int number = 10;
+if (number % 2 == 0) {
+    printf("Number is even");
+} else {
+    printf("Number is odd");
+}
+
+// for loop
+for (int i = 0; i &lt; 5; i++) {
+    printf("%d\n", i);
+}
+
+// while loop
+int i = 0;
+while (i &lt; 5) {
+    printf("%d\n", i);
+    i++;
+}
+
+// do-while loop
+int j = 0;
+do {
+    printf("%d\n", j);
+    j++;
+} while (j &lt; 5);</code></pre>
+
+        <h2>Functions</h2>
+        <p>Functions are blocks of code that perform a specific task. They help in breaking down complex programs into smaller, manageable parts.</p>
+        <h3>Defining a Function</h3>
+        <pre><code>return_type function_name(parameters) {
+    // body of the function
+    return value;
+}</code></pre>
+        <p>Example of a function that adds two numbers:</p>
+        <pre><code>int add(int a, int b) {
+    return a + b;
+}
+
+int main() {
+    int result = add(5, 3);
+    printf("The sum is %d", result);
+    return 0;
+}</code></pre>
+
+        <h2>Input and Output</h2>
+        <p>C uses functions from the <code>stdio.h</code> library to handle input and output. The <code>printf</code> function is used for output, while <code>scanf</code> is used for input.</p>
+        <h3>Example of Input and Output</h3>
+        <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int age;
+    printf("Enter your age: ");
+    scanf("%d", &age);
+    printf("You are %d years old.\n", age);
+    return 0;
+}</code></pre>
+
+        <h2>Arrays</h2>
+        <p>Arrays are used to store multiple values of the same type in a single variable. They are indexed starting from 0.</p>
+        <h3>Example of an Array</h3>
+        <pre><code>int numbers[5] = {1, 2, 3, 4, 5};
+
+for (int i = 0; i &lt; 5; i++) {
+    printf("%d\n", numbers[i]);
+}</code></pre>
+
+        <h2>Conclusion</h2>
+        <p>Understanding the basics of C programming is essential for building a solid foundation in software development. With knowledge of variables, data types, operators, control flow, functions, and arrays, you're well on your way to writing effective C programs.</p>
+        <p>In the next section, we will cover more advanced topics such as pointers, data structures, and memory management.</p>
+    </main>
+</body>
+</html>
