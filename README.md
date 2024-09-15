@@ -14,7 +14,7 @@ just a small programmer.
 ├──[C Advanced](https://deb-svg.github.io/learn-c-advanced) <br>
 └──[Resources for C](https://deb-svg.github.io/learn-c-resources)
 
-[Learn-Java](https://deb-svg.github.io/learn-jv-intro)
+[Learn-Java](https://deb-svg.github.io/learn-jv-intro.html)
 
 ### About Me
 My fav programming language: Python, Java and C
