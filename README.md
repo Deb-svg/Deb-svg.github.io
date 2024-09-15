@@ -11,7 +11,7 @@ just a small programmer.
 ## Main Contents
 ### Other contents
 [Snake Game](https://deb-svg.github.io/snakegame.html) <br>
-[Tutorials and Guides](https://deb-svg.github.io/tutorandguides.html)
+[Tutorials and Guides](https://deb-svg.github.io/tutorandguides)
 
 **Learn-C** <br>
 ├──[Introduction](https://deb-svg.github.io/learn-c-introduction.html) <br>
