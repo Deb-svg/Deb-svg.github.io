@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Java Concepts</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        pre, code {
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: square;
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Code block styling */
+        code {
+            background-color: #f0f0f0;
+            color: #c0392b;
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+
+        pre code {
+            color: #2c3e50;
+        }
+
+        /* Container for main content */
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .content h2 {
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Buttons for navigation */
+        .navigation {
+            margin-top: 20px;
+        }
+
+        .navigation a {
+            display: inline-block;
+            margin-right: 10px;
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .navigation a:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+<div class="content">
+    <h1>Advanced Java Concepts</h1>
+    <p>Welcome to the final part of the <strong>Learn Java</strong> series! In this section, we will explore some advanced Java concepts that are crucial for mastering the language. We will cover topics such as concurrency, generics, lambda expressions, and streams. These concepts will help you write more efficient, scalable, and modern Java applications.</p>
+
+    <h2>Concurrency</h2>
+    <p>Concurrency allows multiple tasks to run simultaneously, improving the efficiency and performance of your applications. Java provides several ways to handle concurrency:</p>
+
+    <h3>Threads</h3>
+    <p>In Java, you can create and manage threads using the <code>Thread</code> class or implementing the <code>Runnable</code> interface. Here’s an example of creating and running a thread:</p>
+
+    <pre><code>class MyRunnable implements Runnable {
+    @Override
+    public void run() {
+        System.out.println("Thread is running.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Thread thread = new Thread(new MyRunnable());
+        thread.start();
+    }
+}
+</code></pre>
+
+    <p>This code defines a class <code>MyRunnable</code> that implements <code>Runnable</code> and overrides the <code>run()</code> method. In the <code>Main</code> class, a <code>Thread</code> object is created with an instance of <code>MyRunnable</code> and started.</p>
+
+    <h3>Executors</h3>
+    <p>Executors provide a higher-level API for managing and controlling thread execution. Here’s an example using the <code>ExecutorService</code>:</p>
+
+    <pre><code>import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class Main {
+    public static void main(String[] args) {
+        ExecutorService executor = Executors.newFixedThreadPool(2);
+
+        executor.submit(() -> {
+            System.out.println("Task 1 is running.");
+        });
+
+        executor.submit(() -> {
+            System.out.println("Task 2 is running.");
+        });
+
+        executor.shutdown();
+    }
+}
+</code></pre>
+
+    <p>In this example, an <code>ExecutorService</code> is created with a fixed thread pool of 2 threads. Two tasks are submitted to the executor, and then the executor is shut down.</p>
+
+    <h2>Generics</h2>
+    <p>Generics allow you to define classes, interfaces, and methods with type parameters. This enables type safety and code reusability. Here’s an example of a generic class:</p>
+
+    <pre><code>public class Box<T> {
+    private T item;
+
+    public void setItem(T item) {
+        this.item = item;
+    }
+
+    public T getItem() {
+        return item;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Box<String> stringBox = new Box<>();
+        stringBox.setItem("Hello Generics");
+
+        System.out.println(stringBox.getItem());  // Output: Hello Generics
+    }
+}
+</code></pre>
+
+    <p>The <code>Box</code> class is a generic class that can hold an item of any type <code>T</code>. In the <code>Main</code> class, a <code>Box</code> object is created with the type parameter <code>String</code>.</p>
+
+    <h2>Lambda Expressions</h2>
+    <p>Lambda expressions provide a concise way to write anonymous methods, primarily used with functional interfaces. Here’s an example of using a lambda expression:</p>
+
+    <pre><code>@FunctionalInterface
+interface MathOperation {
+    int operate(int a, int b);
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MathOperation addition = (a, b) -> a + b;
+        System.out.println("Result: " + addition.operate(5, 3));  // Output: Result: 8
+    }
+}
+</code></pre>
+
+    <p>In this example, <code>MathOperation</code> is a functional interface with a single method <code>operate</code>. A lambda expression is used to provide an implementation for the <code>operate</code> method.</p>
+
+    <h2>Streams</h2>
+    <p>Streams provide a modern way to process sequences of elements (e.g., collections) using functional-style operations. Here’s an example of using streams to filter and process a list of numbers:</p>
+
+    <pre><code>import java.util.Arrays;
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) {
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+        numbers.stream()
+               .filter(n -> n % 2 == 0)
+               .map(n -> n * n)
+               .forEach(System.out::println);
+    }
+}
+</code></pre>
+
+    <p>In this example, a list of numbers is converted into a stream. The stream filters out odd numbers, squares the remaining even numbers, and prints each result.</p>
+
+    <h2>Conclusion</h2>
+    <p>In this lesson, we explored several advanced Java concepts, including concurrency, generics, lambda expressions, and streams. Mastering these topics will enable you to write more efficient, scalable, and modern Java applications. Continue practicing and experimenting with these concepts to deepen your understanding and enhance your Java programming skills.</p>
+
+    <div class="navigation">
+        <a href="learn-jv-oop.html">Back to OOP</a>
+        <a href="learn-jv-intro.html">Back to Home</a>
+    </div>
+</div>
+
+</body>
+</html>
