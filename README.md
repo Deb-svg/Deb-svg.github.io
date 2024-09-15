@@ -15,10 +15,10 @@ Age: Between 8, 12
 
 Name: Ammar Shaif
 
-Hobby: Programming, sometimes do random things
+Hobby: Idk
 
 Fav Color: Blue <br>
-Fav Num: 7 <br> <br>
+Fav Num: 7 <br>
 
 ### When I Get A New Phone I Want To...
 Root it with Magisk or KSU
