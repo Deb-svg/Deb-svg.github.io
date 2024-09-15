@@ -8,7 +8,7 @@ just a small programmer.
 [Snake Game](https://deb-svg.github.io/snakegame) <br>
 [Tutorials and Guides](https://deb-svg.github.io/tutorandguides)
 
-**LEARN-C** <br>
+**Learn-C** <br>
 ├──[Introduction](https://deb-svg.github.io/learn-c-introduction) <br>
 ├──[C Basics](https://deb-svg.github.io/learn-c-basics) <br>
 ├──[C Advanced](https://deb-svg.github.io/learn-c-advanced) <br>
