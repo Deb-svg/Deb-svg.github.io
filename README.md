@@ -1,3 +1,8 @@
+---
+theme: jekyll-theme-minimal
+title: Deb-svg's homepage
+description: Welcome here!
+---
 # My Github io
 
 Hello! Welcome to my github.io README,
