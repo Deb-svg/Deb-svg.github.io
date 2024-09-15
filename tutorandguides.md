@@ -1,7 +1,6 @@
 ---
-theme: jekyll-theme-minimal
+layout: page
 title: Deb-svg's Tutorial and Guides
-description: Learn something here!
 ---
 # Tutorials and Guides
 
