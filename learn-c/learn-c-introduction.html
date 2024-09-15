@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn C: Introduction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        nav {
+            margin: 1rem;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 1rem;
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        main {
+            padding: 2rem;
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            border-radius: 5px;
+        }
+        h1 {
+            color: #333;
+        }
+        h2 {
+            color: #444;
+            margin-top: 1.5rem;
+        }
+        code {
+            background: #eee;
+            border-radius: 3px;
+            padding: 0.2rem;
+        }
+        pre {
+            background: #eee;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        ul {
+            list-style-type: square;
+            margin-left: 2rem;
+        }
+        ol {
+            margin-left: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Learn C: Introduction</h1>
+    </header>
+    <nav>
+        <a href="learn-c-introduction.html">Introduction</a>
+        <a href="learn-c-basics.html">Basics</a>
+        <a href="learn-c-advanced.html">Advanced</a>
+        <a href="learn-c-resources.html">Resources</a>
+    </nav>
+    <main>
+        <h2>What is C?</h2>
+        <p>The C programming language is a powerful, low-level language that provides fine-grained control over system resources. Created by Dennis Ritchie at Bell Labs in the early 1970s, C has become one of the most widely used programming languages in the world, particularly for system and embedded programming.</p>
+
+        <h2>Why Learn C?</h2>
+        <ul>
+            <li><strong>Performance:</strong> C is known for its high performance and efficiency. It allows direct manipulation of hardware resources and memory, which is crucial for performance-critical applications.</li>
+            <li><strong>Portability:</strong> Programs written in C are portable across different platforms. This means that code written on one system can often be compiled and run on another with minimal changes.</li>
+            <li><strong>Foundation for Other Languages:</strong> Understanding C provides a strong foundation for learning other programming languages, such as C++, C#, and Java. Many modern languages borrow concepts and syntax from C.</li>
+            <li><strong>System Programming:</strong> C is commonly used for developing operating systems, compilers, and other system-level software. It provides a good understanding of how computers work at a low level.</li>
+        </ul>
+
+        <h2>Getting Started with C</h2>
+        <p>To begin programming in C, you'll need to set up a development environment. This typically involves installing a C compiler and a text editor. Here’s a step-by-step guide:</p>
+        <ol>
+            <li><strong>Install a Compiler:</strong> Choose a C compiler based on your operating system. For Unix-based systems (like Linux or macOS), GCC is a popular choice. On Windows, MinGW or Visual Studio can be used.</li>
+            <li><strong>Set Up a Text Editor:</strong> You can write C code in any text editor, but an IDE (Integrated Development Environment) like Visual Studio Code, Code::Blocks, or CLion can provide additional features like syntax highlighting and debugging tools.</li>
+            <li><strong>Write Your First Program:</strong> Create a new file with a .c extension, such as <code>hello.c</code>, and write your code.</li>
+            <li><strong>Compile the Code:</strong> Use your compiler to translate the C code into an executable program. For example, with GCC, you can compile your code using <code>gcc hello.c -o hello</code>.</li>
+            <li><strong>Run the Program:</strong> Execute the compiled program from the command line or terminal. For example, on Unix-based systems, use <code>./hello</code>, and on Windows, use <code>hello.exe</code>.</li>
+        </ol>
+
+        <h2>Your First C Program</h2>
+        <p>Here’s a simple C program that prints “Hello, World!” to the console. This program demonstrates the basic structure of a C program:</p>
+        <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    printf("Hello, World!\n");
+    return 0;
+}</code></pre>
+        <p>This program includes the <code>stdio.h</code> header file, which is necessary for input and output functions. The <code>main</code> function is the entry point of every C program. Inside the <code>main</code> function, the <code>printf</code> function is used to print the text to the console.</p>
+
+        <h2>Understanding C Syntax</h2>
+        <p>Here are some fundamental aspects of C syntax you should be familiar with:</p>
+        <ul>
+            <li><strong>Comments:</strong> Comments are used to explain code and are not executed. They can be single-line (using <code>//</code>) or multi-line (using <code>/* ... */</code>).</li>
+            <li><strong>Variables:</strong> Variables are used to store data. You must declare a variable before using it, specifying its type (e.g., <code>int</code>, <code>float</code>, <code>char</code>).</li>
+            <li><strong>Data Types:</strong> C supports various data types, including integers (<code>int</code>), floating-point numbers (<code>float</code>), and characters (<code>char</code>).</li>
+            <li><strong>Control Structures:</strong> C provides control structures like <code>if</code> statements, <code>for</code> loops, and <code>while</code> loops to control the flow of the program.</li>
+            <li><strong>Functions:</strong> Functions are blocks of code that perform specific tasks. You can define your own functions and call them from other parts of your program.</li>
+        </ul>
+
+        <h2>Next Steps</h2>
+        <p>Once you're comfortable with the basics of C, you can start exploring more advanced topics such as:</p>
+        <ul>
+            <li><strong>Pointer Basics:</strong> Learn about pointers and how they can be used to manage memory and optimize performance.</li>
+            <li><strong>Data Structures:</strong> Study common data structures like arrays, linked lists, stacks, and queues.</li>
+            <li><strong>File Handling:</strong> Understand how to read from and write to files using C.</li>
+            <li><strong>Dynamic Memory Allocation:</strong> Explore how to allocate and deallocate memory dynamically using functions like <code>malloc</code> and <code>free</code>.</li>
+            <li><strong>Advanced C Concepts:</strong> Delve into more complex topics such as multi-threading, network programming, and interfacing with hardware.</li>
+        </ul>
+
+        <h2>Additional Resources</h2>
+        <p>Here are some resources to help you continue your learning:</p>
+        <ul>
+            <li><a href="https://www.learn-c.org/" target="_blank">Learn-C.org</a> - An interactive tutorial for learning C programming.</li>
+            <li><a href="https://www.geeksforgeeks.org/c-programming-language/" target="_blank">GeeksforGeeks - C Programming Language</a> - A comprehensive resource with tutorials and examples.</li>
+            <li><a href="https://www.cprogramming.com/" target="_blank">CProgramming.com</a> - A site dedicated to C programming with tutorials and tips.</li>
+            <li><a href="https://www.amazon.com/Programming-Language-4th-Brian-Kernighan/dp/0131103628" target="_blank">The C Programming Language (K&R)</a> - The classic book by Kernighan and Ritchie.</li>
+        </ul>
+    </main>
+</body>
+</html>
